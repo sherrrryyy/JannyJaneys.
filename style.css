@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("heart-bg.jpg");
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+/* Envelope Screen */
+#envelope-container {
+    text-align: center;
+    cursor:pointer;
+}
+
+@keyframes pulse {
+    0% {
+        transform:scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#envelope{
+    width: 200px;
+    animation: pulse 1.5s infinite;
+    cursor: pointer;
+}
+
+#letter-container{
+    display: none;
+    position:fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-window{
+    width: 90vw;
+    max-width: 800px;
+    aspect-ratio: 3/2;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("window.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+    gap: 1px;
+    padding-top: 180px;
+
+    transform: scale(1.2);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.letter-window.open {
+    transform: scale(1);
+    opacity: 1;
+}
+
+h1 {
+    font-size: 30px;
+    margin:0;
+}
+
+p {
+    font-size: 40px;
+}
+
+/* Cat */
+/* Changes:
+- Made the margin to be more specific and made the right margin larger
+
+Note:
+- Margin: top right bottom left
+*/
+.cat {
+    width: 16em;
+    margin: 0px 80px 30px 0px;
+    transition: width 0.4s ease;
+}
+
+.letter-window.final .cat {
+    width: 180px;
+}
+
+/* buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+    position: relative;
+}
+
+.no-wrapper{
+    position:relative;
+}
+
+.btn {
+    width: 120px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.yes-btn,
+.no-btn {
+width: 120px;
+height: auto;
+display: inline-block;
+}
+
+.yes-btn {
+    position: relative;
+    z-index: 2;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+}
+
+.no-btn {
+    z-index: 1;
+    position: relative;
+    transition: transform 0.15s ease;
+    cursor: default;
+}
+
+.final-text{
+    width: 25em;
+    font-size: 1.4em;
+    line-height: 1.4;
+    text-align: center;
+    display: block;
+    padding: 1.5em 1.5em;
+    background-color: rgba(255,240,240,0.5);
+    border-radius: 12px;
+}
+/*Changes:
+- Added the standard width to the box text
+- Adjust the font size according to the size of the box
+- Adjust the display to block instead of inline block
+- Adjust the padding to follow responsive design also
+
+Note:
+- em is a relative unit of measurement in CSS that is used to create scalable and responsive design. My personal fav of measurement.
+*/
+
+.food-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;                     
+    gap: 0.5em;                     
+}
+
+.food-container img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
